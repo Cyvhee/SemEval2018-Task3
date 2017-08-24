@@ -1,0 +1,16 @@
+#######################
+Sample output scorer.py
+#######################
+
+-- Evaluation Task A --
+Accuracy: 0.5
+Precision: 0.6
+Recall: 0.5
+F1-score: 0.5454545454545454
+
+
+-- Evaluation Task B --
+Accuracy: 0.6
+Macro-averaged precision: 0.625
+Macro-averaged recall: 0.75
+Macro-averaged F1-score: 0.6249999999999999
