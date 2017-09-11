@@ -28,5 +28,5 @@ The data were collected between 01/12/2017 and 04/01/2015 and represent 2,676 un
 The entire corpus contains 4,792 tweets and is split into a set for training (80%) and testing (20%). Participants are free, however, to split the training set into a set for training and development.
 
 <h5> Corpus cleaning</h5>
-Prior to data annotation, the entire corpus was cleaned by removing retweets, duplicates and non-English tweets, and replacement of XML-escaped characters (e.g., &amp;). Emoji were converted to UTF-8 descriptions (e.g. :smiling\_face:) for practical reasons related to the annotation of the dataset and by using the script emoji\_converter.py.
+Prior to data annotation, the entire corpus was cleaned by removing retweets, duplicates and non-English tweets, and replacement of XML-escaped characters (e.g., &amp;). Emoji were converted to UTF-8 descriptions (e.g. :smiling_face:) for practical reasons related to the annotation of the dataset and by using the script emoji_converter.py.
 
