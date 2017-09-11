@@ -4,8 +4,7 @@ In this repository you will find the training data for SemEval-2018 Task 3.
 
 ### NOTE ###
 Please note that by using the Twitter data you agree to abide
-by the Twitter terms of service (https://dev.twitter.com/overview/terms/agreement-and-policy),
-and in particular you agree not to redistribute the data, the annotations or the corpus obtained, as this violates the Twitter Terms of Use.
+by the <a href="https://dev.twitter.com/overview/terms/agreement-and-policy" target="_blank">Twitter terms of service</a>, and in particular you agree not to redistribute the data, the annotations or the corpus obtained, as this violates the Twitter Terms of Use.
 
 
 #### Task A ####
