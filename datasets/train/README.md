@@ -21,7 +21,7 @@ by the <a href="https://dev.twitter.com/overview/terms/agreement-and-policy" tar
 #### Details: ####
 
 <h5> Corpus construction</h5>
-All tweets were collected using the <a href="http://dev.twitter.com/rest/public" target="_blank">[Twitter API]</a> using the hashtags #irony, #sarcasm and #not.
+All tweets were collected using the <a href="http://dev.twitter.com/rest/public" target="_blank"><tt>Twitter API</tt></a> using the hashtags #irony, #sarcasm and #not.
 
 The data were collected between 01/12/2017 and 04/01/2015 and represent 2,676 unique users. The corpus was manually labeled using a fine-grained annotation scheme for irony (Van Hee et al., 2016). 20% of this corpus were annotated as non-ironic, and additional non-ironic tweets were added from a background (i.e. randomly crawled) Twitter corpus to balance the corpus distribution.
 
