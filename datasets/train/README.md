@@ -2,7 +2,7 @@
 
 In this repository you will find the training data for SemEval-2018 Task 3.
 
-### NOTE ###
+#### NOTE ####
 Please note that by using the Twitter data you agree to abide
 by the <a href="https://dev.twitter.com/overview/terms/agreement-and-policy" target="_blank">Twitter terms of service</a>, and in particular you agree not to redistribute the data, the annotations or the corpus obtained, as this violates the Twitter Terms of Use.
 
@@ -19,12 +19,14 @@ by the <a href="https://dev.twitter.com/overview/terms/agreement-and-policy" tar
 
 
 #### Details: ####
-All tweets were collected using the <a href="http://dev.twitter.com/rest/public target="_blank">[Twitter API]</a> using the hashtags #irony, #sarcasm and #not.
+
+<h5> Corpus construction</h5>
+All tweets were collected using the <a href="http://dev.twitter.com/rest/public" target="_blank">[Twitter API]</a> using the hashtags #irony, #sarcasm and #not.
 
 The data were collected between 01/12/2017 and 04/01/2015 and represent 2,676 unique users. The corpus was manually labeled using a fine-grained annotation scheme for irony (Van Hee et al., 2016). 20% of this corpus were annotated as non-ironic, and additional non-ironic tweets were added from a background (i.e. randomly crawled) Twitter corpus to balance the corpus distribution.
 
 The entire corpus contains 4,792 tweets and is split into a set for training (80%) and testing (20%). Participants are free, however, to split the training set into a set for training and development.
 
-*** Corpus cleaning ***
+<h5> Corpus cleaning</h5>
 Prior to data annotation, the entire corpus was cleaned by removing retweets, duplicates and non-English tweets, and replacement of XML-escaped characters (e.g., &amp;). Emoji were converted to UTF-8 descriptions (e.g. :smiling\_face:) for practical reasons related to the annotation of the dataset and by using the script emoji\_converter.py.
 
