@@ -15,4 +15,4 @@ In this repository you will find example datasets for SemEval-2018 Task 3.
 
 
 #### Data details: ####
-The tweets are a selection from the training data, see the corresponding folder for more details.
+The tweets are a selection from the training data, consult the README in the corresponding folder for more details.
