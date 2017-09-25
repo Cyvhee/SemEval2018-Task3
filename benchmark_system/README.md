@@ -22,4 +22,4 @@ Install with pip:
 ## Usage
 Run `python example.py` from terminal.
 
-**NOTE**: the path to the input file and the task (A or B) have to be hard-coded in the script.
+**NOTE**: the path to the input file and the task (A or B) has to be hard-coded in the script.
