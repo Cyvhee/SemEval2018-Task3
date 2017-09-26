@@ -36,7 +36,7 @@ def parse_dataset(fp):
     corpus = []
     with open(fp, 'rt') as data_in:
         for line in data_in:
-            if not line.startswith("Tweet index"): # discard first line if it contains metadata
+            if not line.lower().startswith("tweet index"): # discard first line if it contains metadata
                 line = line.rstrip() # remove trailing whitespace
                 label = int(line.split("\t")[1])
                 tweet = line.split("\t")[2]
@@ -66,8 +66,9 @@ if __name__ == "__main__":
 
     # Dataset: SemEval2018-T4-train-taskA.txt or SemEval2018-T4-train-taskB.txt
     DATASET_FP = "./SemEval2018-T4-train-taskA.txt"
-    PREDICTIONSFILE = open("./predictions.txt", "w")
     TASK = "A" # Define, A or B
+    FNAME = './predictions-task' + TASK + '.txt'
+    PREDICTIONSFILE = open(FNAME, "w")
 
     K_FOLDS = 10 # 10-fold crossvalidation
     CLF = LinearSVC() # the default, non-parameter optimized linear-kernel SVM
@@ -77,16 +78,16 @@ if __name__ == "__main__":
     X = featurize(corpus)
 
     class_counts = np.asarray(np.unique(y, return_counts=True)).T.tolist()
-
+    print (class_counts)
+    
     # Returns an array of the same size as 'y' where each entry is a prediction obtained by cross validated
     predicted = cross_val_predict(CLF, X, y, cv=K_FOLDS)
     
-    # Change F1-score calculation depending on the task
+    # Modify F1-score calculation depending on the task
     if TASK.lower() == 'a':
         score = metrics.f1_score(y, predicted, pos_label=1)
     elif TASK.lower() == 'b':
         score = metrics.f1_score(y, predicted, average="macro")
-    score = metrics.f1_score(y, predicted)
     print ("F1-score Task", TASK, score)
     for p in predicted:
         PREDICTIONSFILE.write("{}\n".format(p))
