@@ -11,7 +11,7 @@ The script:
   * prediction files should be named 'predictions-taskA.txt' and/or 'predictions-taskB.txt'
   * calculates accuracy, precision, recall and F1-score.
 
-Date: 08.08.2017
+Date: 08.08.2017, adapted on 26.09.2017
 """
 
 from __future__ import division
@@ -21,18 +21,33 @@ import os
 
 def score(input_dir, output_dir):
     # unzipped submission data is always in the 'res' subdirectory
-    submission_file_name = 'predictions-taskA.txt'
     submission_dir = os.path.join(input_dir, 'res')
+    submission_file = []
+    for el in os.listdir(submission_dir):
+        if el.startswith('predictions'):
+            submission_file.append(el)
+    if not len(submission_file) == 1:
+       print ("Warning: the submission folder should only contain 1 file ('predictions-taskA.txt' or 'predictions-taskB.txt'). Process terminated.")
+       sys.exit()
+    submission_file_name = submission_file[0]
     submission_path = os.path.join(submission_dir, submission_file_name)
-    if not os.path.exists(submission_path):
-        message = "Expected submission file '{0}', found files {1}"
-        sys.exit(message.format(submission_file_name, os.listdir(submission_dir)))
+    if any (name in submission_file_name.lower() for name in ['taska', 'task-a', 'task_a']):
+        task = "A"
+    elif any (name in submission_file_name.lower() for name in ['taskb', 'task-b', 'task_b']):
+        task = "B"
+    else:
+        message = "Task not found. Please check the name of your submission file."
+        sys.exit()
     with open(submission_path) as submission_file:
         submission = submission_file.readlines()
 
     # unzipped reference data is always in the 'ref' subdirectory
-    with open(os.path.join(input_dir, 'ref', 'goldstandard-taskA.txt')) as truth_file:
-        truth = truth_file.readlines()
+    if task == "A":
+        with open(os.path.join(input_dir, 'ref', 'goldstandard_train_A.txt')) as truth_file:
+            truth = truth_file.readlines()
+    elif task == "B":
+        with open(os.path.join(input_dir, 'ref', 'goldstandard_train_B.txt')) as truth_file:
+            truth = truth_file.readlines()
 
     true = []
     predicted = []
@@ -41,24 +56,24 @@ def score(input_dir, output_dir):
             true.append(int(t.strip()))
             predicted.append(int(s.strip()))
 
-    if sorted(list(set(true))) == sorted(list(set(predicted))) == [0,1]:
-        task = "A"
-    elif sorted(list(set(true))) == sorted(list(set(predicted))) == [1,2,3,4]:
-        task = "B"
-    else:
-        message = "Warning: some labels are not recognised. Class labels are [0,1] for task A and [1,2,3,4] for task B."
-        sys.exit(message)
     if task == "A":
-        with open(os.path.join(output_dir, 'scores.txt'), 'w') as output_file:
-            acc = calc_accuracy(true, predicted)
-            p, r, f = precision_recall_fscore(true, predicted, beta=1, labels=[0,1], pos_label=1)
-            output_file.write("Accuracy:{0}\nPrecision:{1}\nRecall:{2}\nF1-score:{3}\n".format(acc, p,r,f))
+        for el in list(set(true+predicted)):
+            if not el in [0,1]:
+                print ("Warning: some labels are not recognised. Class labels are [0,1] for task A. Process terminated.")
+                sys.exit()
     elif task == "B":
-        with open(os.path.join(output_dir, 'scores.txt'), 'w') as output_file:
-            acc = calc_accuracy(true, predicted)
-            p, r, f = precision_recall_fscore(true, predicted, beta=1, labels=[1,2,3,4])
-            output_file.write("Accuracy:{0}\nPrecision:{1}\nRecall:{2}\nF1-score:{3}\n".format(acc, p,r,f))
+        for el in list(set(true+predicted)):
+            if not el in [0,1,2,3]:
+                print ("Warning: some labels are not recognised. Class labels are [0,1,2,3] for task B. Process terminated.")
+                sys.exit()
 
+    with open(os.path.join(output_dir, 'scores.txt'), 'w') as output_file:
+        acc = calc_accuracy(true, predicted)
+        if task == "A":
+            p, r, f = precision_recall_fscore(true, predicted, beta=1, labels=[0,1], pos_label=1)
+        elif task == "B":
+            p, r, f = precision_recall_fscore(true, predicted, beta=1, labels=[0,1,2,3])
+        output_file.write("Accuracy:{0}\nPrecision:{1}\nRecall:{2}\nF1-score:{3}\n".format(acc, p,r,f))
 
 
 def calc_accuracy(true, predicted):
