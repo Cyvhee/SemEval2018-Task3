@@ -2,7 +2,7 @@
 
 In this repository you will find example datasets for SemEval-2018 Task 3.
 
-The example datasets show how the official training data will look like, the trial data are provided to you to try out uploading a submission on CodaLab during the practice phase.
+The example datasets show how the official training data will look like, the trial dataset (predictions-TaskA.txt) is provided to you to try out uploading a submission on CodaLab during the practice phase.
 
 #### Task A ####
 * Task: binary
