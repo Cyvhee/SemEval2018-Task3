@@ -1,6 +1,7 @@
 ## Training data ##
 
-In this repository you will find the training data for SemEval-2018 Task 3.
+In this repository you will find the training data for SemEval-2018 Task 3. The training files are provided with preprocessed emoji (i.e. converted to UTF-8 descriptions) and the original emoji (_emoji.txt).
+
 
 #### NOTE ####
 Please note that by using the Twitter data you agree to abide
