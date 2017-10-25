@@ -2,6 +2,9 @@
 
 This is the Github repository for SemEval-2018 Task 3.
 
+#### Disclaimer ####
+Please note that the data are exclusively reserved to the participants of SemEval-2018 Task 3 and are hence not to be used freely until the shared task has finished (summer 2018). Until then, interested people can create their own irony datasets using our fine-grained annotation scheme as explained in <a href="https://biblio.ugent.be/publication/8531569" target="_blank">Van Hee, 2017</a>.
+
 The following **datasets and scripts** will be distributed throughout the competition:
 * Trial data & evaluation script (21/08/2017)
 * Data for training and development & benchmark system (25/09/2017)
