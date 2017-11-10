@@ -65,7 +65,7 @@ if __name__ == "__main__":
     # Experiment settings
 
     # Dataset: SemEval2018-T4-train-taskA.txt or SemEval2018-T4-train-taskB.txt
-    DATASET_FP = "./SemEval2018-T4-train-taskA.txt"
+    DATASET_FP = "./SemEval2018-T3-train-taskA.txt"
     TASK = "A" # Define, A or B
     FNAME = './predictions-task' + TASK + '.txt'
     PREDICTIONSFILE = open(FNAME, "w")
