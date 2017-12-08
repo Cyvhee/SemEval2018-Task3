@@ -45,7 +45,5 @@ The data were collected between 01/12/2017 and 04/01/2015 and represent 2,676 un
 The entire corpus contains 4,792 tweets and is split into a set for training (80%) and testing (20%). Participants are free, however, to split the training set into a set for training and development.
 
 <h5> Corpus cleaning</h5>
-Prior to data annotation, the entire corpus was cleaned by removing retweets, duplicates and non-English tweets, and replacement of XML-escaped characters (e.g., &amp;). Emoji were converted to UTF-8 descriptions (e.g. :smiling_face:) for practical reasons related to the annotation of the dataset, but the original datasets (_emoji) are also available in this directory.
-
-
-The tweets were cleaned from irony-related hashtags (e.g. '#irony') as the test data will neither contain such hashtags. Upon demand of some participants, however, we released a version of the training corpus where the irony hashtags are included.
+* Prior to data annotation, the entire corpus was cleaned by removing retweets, duplicates and non-English tweets, and replacement of XML-escaped characters (e.g., &amp;). Emoji were converted to UTF-8 descriptions (e.g. :smiling_face:) for practical reasons related to the annotation of the dataset, but the original datasets (_emoji) are also available in this directory.
+* The tweets were cleaned from irony-related hashtags (e.g. '#irony') as the test data will neither contain such hashtags. Upon demand of some participants, however, we released a version of the training corpus where the irony hashtags are included.
