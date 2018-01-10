@@ -30,7 +30,7 @@ by the <a href="https://dev.twitter.com/overview/terms/agreement-and-policy" tar
 
 ### Task B ###
 * Task: multiclass
-* Labels: Labels: **1** (ironic by clash), **2** (situational irony), **3** (other irony), **0** (non-ironic)
+* Labels: Labels: **1** (ironic by clash), **2** (situational irony), **3** (other irony), **0** (not ironic)
 * File format: a tab-separated file with one line per tweet containing per line the tweet index, a multiclass classification label, and the tweet text.
 
 
