@@ -11,3 +11,5 @@ The following **datasets and scripts** will be distributed throughout the compet
 * Test data Task A (15/01/2018) & Task B (22/01/2018)
 
 For questions on the provided data, have a look at the [Google groups forum](https://groups.google.com/d/forum/semeval2018-task3).
+
+The SemEval-2018 irony dataset © 2018 by Cynthia Van Hee is licensed under CC BY-NC-SA 4.0.
